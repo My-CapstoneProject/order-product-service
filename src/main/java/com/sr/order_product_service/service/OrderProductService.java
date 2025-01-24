@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrderProductService {
@@ -21,7 +22,11 @@ public class OrderProductService {
     public List<OrderProductEntity> getAllOrderProducts() {
         return orderProductRepository.findAll();
     }
-
+    
+    public Optional<OrderProductEntity> getAOrderProduct(int inventoryId) {
+		return orderProductRepository.findById(inventoryId);
+	}
+    
     public List<OrderProductEntity> getProductsByOrderId(int orderId) {
         return orderProductRepository.findAll().stream().filter(op -> op.getOrderId() == orderId).toList();
     }

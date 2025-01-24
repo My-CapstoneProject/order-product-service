@@ -18,6 +18,11 @@ public class OrderProductPojo {
 
 	public int productId;
 
-	public int sales_quantity;
+	public int salesQuantity;
+	
+	private OrderPojo orderPojo;
+	
+	private ProductPojo productPojo;
+
 
 }

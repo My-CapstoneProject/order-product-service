@@ -31,6 +31,5 @@ public class OrderProductEntity {
 	public int productId;
 	
 	@Column(name="sales_quantity")
-	public int sales_quantity;
-
+	public int salesQuantity;
 }
