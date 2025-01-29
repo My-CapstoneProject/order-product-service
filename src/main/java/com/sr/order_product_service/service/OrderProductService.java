@@ -36,4 +36,8 @@ public class OrderProductService {
                 .filter(op -> op.getProductId() == productId)
                 .toList();
     }
+    public List<OrderProductEntity> getOrderProductsByOrderId(int orderId) {
+        // Fetch the products using the repository
+        return orderProductRepository.findByOrderId(orderId);
+    }
 }

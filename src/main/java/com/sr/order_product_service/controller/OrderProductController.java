@@ -34,6 +34,12 @@ public class OrderProductController {
         OrderProductEntity createdOrderProduct = orderProductService.addOrderProduct(orderProduct);
         return ResponseEntity.ok(createdOrderProduct);
     }
+    
+    @GetMapping("/by-order/{orderId}")
+    public List<OrderProductEntity> getAllOrderProductsByOrderId(@PathVariable int orderId) {
+        // Call the service layer to fetch order products
+        return orderProductService.getOrderProductsByOrderId(orderId);
+    }
 
     // Get all OrderProduct relationships
     @GetMapping
